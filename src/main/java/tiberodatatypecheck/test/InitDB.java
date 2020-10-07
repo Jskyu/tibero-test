@@ -15,13 +15,14 @@ import java.time.LocalTime;
 @RequiredArgsConstructor
 public class InitDB {
 
-    private final InitService initService;
+//    private final InitService initService;
 
-    @PostConstruct
-    public void init(){
-        initService.dbInit1();
-    }
+//    @PostConstruct
+//    public void init(){
+//        initService.dbInit1();
+//    }
 
+/*
     @Component
     @Transactional
     @RequiredArgsConstructor
@@ -114,5 +115,6 @@ public class InitDB {
             em.persist(entity);
         }
     }
+*/
 
 }

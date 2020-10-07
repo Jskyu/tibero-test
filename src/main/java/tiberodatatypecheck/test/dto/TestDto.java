@@ -1,28 +1,27 @@
 package tiberodatatypecheck.test.dto;
 
+import com.querydsl.core.annotations.QueryProjection;
 import lombok.Data;
-import tiberodatatypecheck.test.model.TestEntity;
 
 @Data
 public class TestDto {
 
-    private String hsm;
     private String mrn;
     private String msn;
     private String bl;
-    private String hs;
+//    private String hs;
     private String itemNm;
 
     private int inCnt;
     private int invAmt;
 
-    public TestDto(TestEntity entity) {
-        this.hsm = entity.getId().getHsn();
-        this.mrn = entity.getMrn();
-        this.msn = entity.getId().getMsn();
-        this.bl = entity.getBl();
-        this.itemNm = entity.getItem_nm();
-        this.inCnt = entity.getIn_cnt();
-        this.invAmt = entity.getInv_amt();
+    @QueryProjection
+    public TestDto(String mrn, String msn, String bl, String itemNm, int inCnt, int invAmt) {
+        this.mrn = mrn;
+        this.msn = msn;
+        this.bl = bl;
+        this.itemNm = itemNm;
+        this.inCnt = inCnt;
+        this.invAmt = invAmt;
     }
 }
